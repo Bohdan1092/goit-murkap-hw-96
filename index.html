@@ -47,6 +47,31 @@
             <button class="button-backdrop" data-close-model>
                 &#215
             </button>
+            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form class="form .js-speaker-form" >
+                <!-- placeholder="Name" подсказка в строке заполнения -->
+                <div class="form-field">
+                    <label for="name">Имя</label>
+                    <input type="text" name="use-name"id="name" >
+                </div>
+               <div class="form-field">
+                <label for="tel">Телефон</label>
+                <input type="tel" name="tel"id="tel">
+               </div>
+                <div class="form-field">
+                    <label for="mail">Почта</label>
+                    <input type="email" name="mail"id="mail">
+                </div>
+                <div class="form-field">
+                    <label for="comment">Коментарий</label>
+                    <textarea name="comment" id="comment" rows="8" placeholder="Введите текс"></textarea>
+                </div>
+                <div class="form-field form-flex">
+                    <input type="checkbox" name="policy" id="policy">
+                    <label for="policy">Соглашаюсь с рассылкой и принимаю <span class="policy"> Условия договора</span></label>
+                </div>
+                    <button class="button" type="submit">Оставить заявку</button>
+            </form>
         </div>
     </div>
         <section class="section-huro">

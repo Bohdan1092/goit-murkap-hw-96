@@ -331,6 +331,52 @@ transform: scaleX(0);
     background-color: black;
 }
 /* мммм */
+textarea {
+    resize: none;
+}
+.form {
+width: 600px;
+outline: 2px solid red;
+margin-right: auto;
+margin-left: auto;
+padding: 15px;
+}
+
+.form-field {
+ margin-bottom: 20px;
+ /* outline: 2px solid darkgoldenrod; */
+ display: flex;
+ flex-direction: column ;
+}
+.form-field input {
+    /* width: 100%; */
+    margin: 0;
+    padding: 5px 15px;
+}
+.form-field input::placeholder {
+    color:red;
+
+}
+.form-field label {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.topic-options {
+    margin: 0;
+    padding: 0;
+}
+.topic-options input {
+    width: 25px;
+}
+.topic-options li {
+    display: flex;
+    align-items: center;
+}
+.topic-options input[type="checkbox"] {
+
+}
+
+
 .btn {
     position: relative;
     align-items: center;

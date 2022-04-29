@@ -279,8 +279,105 @@
     </li>
   
 </ul> -->
+<!--autocomplete="off" выключает подсказку ранее вводившкую(телефон)-->
+<form class="form .js-speaker-form" >
+    <!-- placeholder="Name" подсказка в строке заполнения -->
+    <div class="form-field">
+        <label for="name">Имя</label>
+        <input type="text" name="use-name"id="name" placeholder="Богдан ННН">
+    </div>
+<!-- autofocus фокус сразу на странице ,на элементе -->
+   <div class="form-field">
+    <label for="tel">Телефон</label>
+    <input type="tel" name="tel"id="tel" placeholder="+380... ... .. ..">
+   </div>
 
-    <script>
+    <div class="form-field">
+        <label for="mail">Почта</label>
+        <input type="email" name="mail"id="mail" placeholder="exces@mail.com">
+    </div>
+            <!-- имя у чекбоксов должен быть одиноковый -->
+            <!-- role="group" браузер прочтает как группа элементов(для симантики) -->
+    <div role="group"> 
+        <h2>Тема доклада</h2>
+        <ul class="topic-options">
+            <li>
+                <input type="checkbox" name="topic-1" value="html" id="html" >
+                <label for="html">HTML</label>
+            </li>
+            <li>
+                <input type="checkbox" name="topic-2" value="css" id="css" checked >
+                <label for="CSS">CSS</label>        
+            </li>
+            <li>
+                <input type="checkbox" name="topic-3" value="js" id="js" >
+                <label for="js">JavaScript</label>
+            </li>
+        </ul>
+                                    <!-- checked ставят чтоб там уже стояла галочка -->
+
+    </div>
+    <!-- Указывать обезатьльно name одинаковое,чтоб браузер выбрал одно из.. -->
+    <!-- div можно давать класс  -->
+    <div role="group" class="group">
+        <h2>Твой уровень</h2>
+<ul>
+    <li>
+        <input type="radio" name="level" value="junior" id="junior" checked>
+        <label for="junior">Junior</label>
+    </li>
+    <li>
+        <input type="radio" name="level" value="midle" id="midle">
+        <label for="midle">Midle</label>
+    </li>
+    <li>
+        <input type="radio" name="level" value="senior" id="senior">
+        <label for="senior">Senior</label>
+    </li>
+</ul>
+    </div>
+    <!-- дата и время -->
+<div class="form-field">
+    <label for="date">Доклад</label>
+    <input type="datetime-local" name="date" id="date">
+</div>
+
+<!-- для загрузки файла потом через JS -->
+<div class="form-field">
+    <input type="file" name="pdf" id="pdf">
+    <label for="pdf">Загрузка файла</label>
+</div>
+    <!-- оставлять коментарии и в сss можно ограничить размер(textarea-resize:none) -->
+<div class="form-field">
+    <label for="comment">Оставить коментарий</label>
+    <textarea name="comment" id="comment" rows="8"></textarea>
+</div>
+    
+    <!-- cоглашение -->
+<div class="form-field">
+    <input type="checkbox" name="policy" id="policy">
+    <label for="policy">Согласие</label>
+</div>
+
+<!-- только type="submit" -->
+    <button  type="submit">Оставить заявку</button>
+</form>
+
+
+
+<script>
+    (() => {
+        document
+        .querySelector('.js-speaker-form')
+        .addEventListener('sumbit', e => {
+            e.preventDefault();
+            new FormData(e.currentTarget).forEach((value, name) =>
+            console.log('${name}: ${value}'),
+            );
+        });
+    } )();
+</script>
+     <!-- <script>
         const refs = {
             openModalBtn: document.querySelector("[data-open-model]"),
             closeModalBtn: document.querySelector("[data-close-model]"),
@@ -296,6 +393,6 @@
         function logBackdropClick() {
             console.log ("Model")
         }
-    </script>
+        </script>  -->
 </body>
 </html>
